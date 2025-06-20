@@ -1,0 +1,18 @@
+*{
+    box-sizing: border-box;
+}
+.parent {
+    background-color: black;
+    display: grid;
+    width: 800px;
+    height: 100vh;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 10px;
+    margin: auto;
+}
+.parent div {
+    background-color: darkgrey;
+    border: 1px solid white;
+    padding: 10px;
+    text-align: center;
+}
