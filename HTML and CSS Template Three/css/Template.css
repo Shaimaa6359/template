@@ -4,8 +4,8 @@
   box-sizing: border-box;
 }
 :root {
-  --main-color: #2196f3;
-  --main-color-alt: #1787e0;
+  --main-color: #673ab7;
+  --main-color-alt: #9c27b0;
   --main-transition: 0.3s;
 }
 html {
@@ -87,6 +87,11 @@ header .main-nav {
     margin: auto;
   }
 }
+header .main-nav > li:hover .maga-menu {
+  opacity: 1;
+  top: 100%;
+  z-index: 100;
+}
 header .main-nav > li > a {
   display: flex;
   justify-content: center;
@@ -122,5 +127,170 @@ header .main-nav > li > a:hover {
 header .main-nav > li > a:hover::before {
   left: 0px;
 }
+header .maga-menu {
+  position: absolute;
+  width: 95%;
+  top: calc(100% + 50px);
+  left: 0;
+  background-color: white;
+  border-bottom: 3px solid var(--main-color);
+  z-index: -1;
+  display: flex;
+  gap: 40px;
+  opacity: 0;
+  transition:
+    top var(--main-transition),
+    opacity var(--main-transition);
+  padding: 30px;
+  margin: 0px 30px;
+}
+@media (max-width: 768px) {
+  header .maga-menu {
+    width: 100%;
+    left: 0;
+    top: calc(100% + 20px);
+    gap: 0px;
+    flex-direction: column;
+    margin: 0px;
+    justify-content: center;
+    align-items: center;
+  }
+}
 
+header .maga-menu .image img {
+  max-width: 100%;
+}
+@media (max-width: 991px) {
+  header .maga-menu .image {
+    display: none;
+  }
+}
+header .maga-menu .links {
+  min-width: 240px;
+  flex: 1;
+}
+header .maga-menu .links li {
+  display: flex;
+  position: relative;
+}
+header .maga-menu .links li:not(:last-child) {
+  border-bottom: 1px solid #abd;
+}
+@media (max-width: 768px) {
+  header .maga-menu .links:first-of-type li:last-child {
+    border-bottom: 1px solid #abd;
+  }
+}
+
+header .maga-menu .links li::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 0px;
+  height: 100%;
+  z-index: -1;
+  transition: var(--main-transition);
+}
+header .maga-menu .links li:hover:before {
+  background-color: #abd;
+  width: 100%;
+}
+header .maga-menu .links li a {
+  color: var(--main-color);
+  font-size: 18px;
+  margin-bottom: 4px;
+  transition: var(--main-transition);
+  padding: 15px;
+  font-weight: bold;
+}
+
+header .maga-menu .links li a i {
+  margin-right: 10px;
+}
 /* End header */
+/* start landing */
+.landing {
+  min-height: 100vh;
+  text-align: center;
+  position: relative;
+}
+.landing::before {
+  content: " ";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform: skewY(-8deg);
+  top: -40px;
+  left: 0px;
+  background-color: #abd;
+  z-index: -1;
+  transform-origin: top left;
+}
+.landing .container {
+  min-height: calc(100vh - 73.6px);
+  display: flex;
+  align-items: center;
+  padding-bottom: 150px;
+}
+.landing .image img {
+  position: relative;
+  width: 600px;
+  animation: up-and-down 5s linear infinite;
+}
+@media (max-width: 992px) {
+  .landing .image img {
+    display: none;
+  }
+}
+.landing .text {
+  flex: 1;
+  max-width: 600px;
+}
+.landing h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  letter-spacing: -2px;
+}
+.landing p {
+  font-size: 24px;
+  line-height: 1.7;
+  margin: 5px 0 0;
+}
+.landing .go-down {
+  color: var(--main-color);
+  transition: var(--main-transition);
+}
+.landing .go-down:hover {
+  color: var(--main-color-alt);
+}
+.landing .go-down i {
+  font-size: xx-large;
+  animation: bouncing 1.5s infinite;
+}
+/* end landing */
+/*start animation */
+@keyframes up-and-down {
+  0%,
+  100% {
+    top: 0px;
+  }
+  50% {
+    top: 40px;
+  }
+}
+@keyframes bouncing {
+  0%,
+  10%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0px);
+  }
+  30%,
+  60% {
+    transform: translateY(-20px);
+  }
+}
+/* end animation */

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Learn JavaScript</title>
+    <script src="ass2.js"></script>
+    <script>
+      // Code One
+      /*
+      not work
+        because the element is not loaded yet
+        Code One will not work. 
+        Reason: JavaScript executes in sequence (top to bottom). 
+        In Code One, the script tries to access the <h1> element before it is created in the DOM. 
+        Since the element with id="el" does not exist yet, the style change will fail.
+      */
+      document.getElementById("el").style.color = "red";
+    </script>
+    <script>
+      // Code Two
+      /*
+      This code works because it waits for the window to load completely before trying to access the <h1> element.
+      */
+      window.onload = function () {
+        document.getElementById("el").style.color = "red";
+      };
+    </script>
+  </head>
+  <body>
+    <h1 id="el">Page Title</h1>
+    <h1 id="name">Shaimaa</h1>
+    <script>
+      // Code Three
+      /*will work because the script is placed after the <h1> element in the HTML document*/
+      document.getElementById("el").style.color = "red";
+    </script>
+    <script src="ass1.js"></script>
+  </body>
+</html>
