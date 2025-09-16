@@ -7,8 +7,8 @@ console.log(
 document.getElementById("name").style.cssText =
   "color: blue; font-size: 80px; font-weight: bold; text-align: center; font-family: Arial";
 // anther way ass2
-document.writeln("<h1>Abdullah</h1>");
-document.querySelector("h1").style.color = "orange";
+document.writeln("<h1 id= 'abd'>Abdullah</h1>");
+document.querySelector("h1#abd").style.color = "orange";
 
 // ass3
 console.log(
@@ -45,5 +45,6 @@ console.groupEnd();
 // table
 console.table(["Shaimaa", "Web", "School", "Abdullah", "mentoring"]);
 // ass6
-console.log("Iam In Console");
-document.write("Iam In Page");
+console.log("Iam In Console", { style: "display: none" });
+console.log("Iam In Console", { style: "display: none" });
+document.write("Iam In Page", { style: "display: none" });
