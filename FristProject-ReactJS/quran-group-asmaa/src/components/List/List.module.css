@@ -1,0 +1,17 @@
+.listContainer {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  background-color: #f9f9f9; /* خلفية لطيفة */
+}
+
+.show {
+  display: block;
+}
+.hide {
+  display: none;
+}

@@ -1,0 +1,14 @@
+.cardInfo {
+  border: 1px solid #abd; /* لون هادي للحدود */
+  border-radius: 12px; /* حواف دائرية */
+  width: 280px; /* أصغر شوية من 500px */
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* ظل ناعم */
+  background-color: #fff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cardInfo:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
